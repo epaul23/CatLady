@@ -1,0 +1,40 @@
+1. Preparation
+- Create a main class to run the testing
+- Import all models and controllers
+-Initialize game components and controllers which includes:
+	-Hand of players
+	-Board
+	-Score
+	-All controller classes
+- Add different types of cards to player 1's hand and player2's hand
+
+2. Testing
+	2.1 InputController
+		-Test Valid inputs (enter a valid row/column and valid action and whether both upper case and lower case works)
+		-Check that the system correctly processes inputs(cards added, tokens increased, cards removed, row that the cat blocks cannot be taken)
+		-Test invalid inputs (enter an invalid action or invalid character when choosing a row/column)
+		-Check if the system provide re-prompts for valid inputs or any error messages
+		
+	2.2 TurnController
+	Simulate player turns
+		-Try drawing cards multiple times during turn
+		-Validate that the 2nd call to draw cards does not work
+		-Try using lost cat cards when not enough are available
+		-Validate that the game re-prompts user or that an error message is generated
+		-Try using a spray bottle when there is none in the player's hand
+		-Validate that the game re-prompts user or that an error message is generated
+		-Try using laser pointer card when another action has already been used
+		-Validate that the game re-promts user or that an error message is generated
+		-Try using lost cat, spray bottle, and draw cards after laser pointer card has been used
+		-Validate that the game re-prompts user or that an error message is generated
+		-Verify that ending a turn switches to the other player's hand for their turn
+
+	2.3 CatFeedingController
+		-Try feeding a cat when the hand has the appropriate amount of food
+		-Verify that the cats isFed status is changed to true and that food is removed
+		-Try feeding cat when the correct amount of food is not present
+		-Verify that an error message is thrown and food is not removed from hand
+		-Try feeding a cat a treat and unfeeding the same cat
+		-Verify that a treat is returned to the player's hand instead of normal food
+		-Try feeding a cat a wild food when there is not enough normal food
+		-Verify that the cat is fed
