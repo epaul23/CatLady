@@ -73,6 +73,7 @@ From the project root:
 cd src
 javac controller/*.java model/*.java view/*.java
 java controller.Game
+```
 
 ## Gameplay Summary
 
